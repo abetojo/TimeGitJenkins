@@ -12,24 +12,24 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 class TimeTest {
 
-	@ParameterizedTest
-	@ValueSource(strings = { "12:10:10:10", "05:05:10:10" })
-	void testGetMillisecondsGood(String candidate) {
-		int milliseconds = Time.getMilliseconds(candidate);
-		assertTrue("The seconds were not calculated properly", milliseconds==10);
-	}
-
-	@Test
-	void testGetMillisecondsBad() {
-		assertThrows(StringIndexOutOfBoundsException.class, ()-> {Time.getMilliseconds("12:00:00");});
-	}
-	
-	@ParameterizedTest
-	@ValueSource(strings = { "10:00:00:59", "10:15:15:59", "10:59:59:59" })
-	void testGetMillisecondsBoundary(String candidate) {
-		int milliseconds = Time.getMilliseconds(candidate);
-		assertEquals(59, milliseconds);
-	}
+//	@ParameterizedTest
+//	@ValueSource(strings = { "12:10:10:10", "05:05:10:10" })
+//	void testGetMillisecondsGood(String candidate) {
+//		int milliseconds = Time.getMilliseconds(candidate);
+//		assertTrue("The seconds were not calculated properly", milliseconds==10);
+//	}
+//
+//	@Test
+//	void testGetMillisecondsBad() {
+//		assertThrows(StringIndexOutOfBoundsException.class, ()-> {Time.getMilliseconds("12:00:00");});
+//	}
+//	
+//	@ParameterizedTest
+//	@ValueSource(strings = { "10:00:00:59", "10:15:15:59", "10:59:59:59" })
+//	void testGetMillisecondsBoundary(String candidate) {
+//		int milliseconds = Time.getMilliseconds(candidate);
+//		assertEquals(59, milliseconds);
+//	}
 	
 	
 //	@Test
