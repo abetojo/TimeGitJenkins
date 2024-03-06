@@ -64,17 +64,18 @@ public class Time
 		//we will eventually multiply the hours by 3600 + the minutes by 60 + the seconds
 		int minutes = getTotalMinutes (time);
 		int seconds = getSeconds(time);
-		int milliseconds = getMilliseconds(time);
-		return (int) (hours * 3600 + minutes * 60 + seconds + (milliseconds / 1000.0));
+		//int milliseconds = getMilliseconds(time);
+		return hours * 3600 + minutes * 60 + seconds;
+		//(milliseconds / 1000.0));
 	}
 	
-	public static int getMilliseconds(String time)throws NumberFormatException, StringIndexOutOfBoundsException
-	{
-		if (time.length()>11) {
-	        throw new NumberFormatException("your time was too long!");
-	    }
-		return Integer.parseInt(time.substring(9,11));
-	}
+//	public static int getMilliseconds(String time)throws NumberFormatException, StringIndexOutOfBoundsException
+//	{
+//		if (time.length()>11) {
+//	        throw new NumberFormatException("your time was too long!");
+//	    }
+//		return Integer.parseInt(time.substring(9,11));
+//	}
 	
 	public static int getSeconds(String time) throws NumberFormatException, StringIndexOutOfBoundsException 
 	{
